@@ -1,0 +1,51 @@
+﻿@page
+@model ShirtWebAppFinal.Pages.ManageShirts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>ShirtModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShirtModel.ShirtModelId" />
+            <div class="form-group">
+                <label asp-for="ShirtModel.ShirtName" class="control-label"></label>
+                <input asp-for="ShirtModel.ShirtName" class="form-control" />
+                <span asp-validation-for="ShirtModel.ShirtName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShirtModel.FilePath" class="control-label"></label>
+                <input asp-for="ShirtModel.FilePath" class="form-control" />
+                <span asp-validation-for="ShirtModel.FilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShirtModel.Price" class="control-label"></label>
+                <input asp-for="ShirtModel.Price" class="form-control" />
+                <span asp-validation-for="ShirtModel.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShirtModel.Sizes" class="control-label"></label>
+                <input asp-for="ShirtModel.Sizes" class="form-control" />
+                <span asp-validation-for="ShirtModel.Sizes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
